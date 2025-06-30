@@ -7,8 +7,6 @@ This repository contains the full dataset, simulation code, and semantic artifac
 
 ## 📁 Structure
 
-## 📁 Structure
-
 ```text
 ├── Data/
 │   ├── dt_simulation_data.csv

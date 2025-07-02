@@ -69,7 +69,7 @@ Each script outputs:
 * Optional graphs (can be enabled)
 
 ## 📚 Semantic Artifacts
-* hotel_ontology.owl: OWL 2.0 ontology defining the semantic model.
+* hotel_ontology: DTDL Models.
 * reasoning_rules.swrl: Inference rules using SWRL.
 * queries.sparql: Sample SPARQL queries used for reasoning.
 
@@ -78,5 +78,5 @@ Released under the MIT License. See LICENSE for details.
 
 ## 📬 Contact
 For questions or collaborations, please contact:
-msegura@ugr.es
+moises.segura101@alu.ulpgc.es
 

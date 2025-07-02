@@ -1,0 +1,11 @@
+﻿{
+  "@id": "dtmi:digitaltwins:rec_3_3:building:HotelRoom;1",
+  "@type": "Interface",
+  "displayName": {
+    "en": "A room in a Hotel"
+  },
+  "extends": "dtmi:digitaltwins:rec_3_3:core:Room;1",
+  "@context": [
+    "dtmi:dtdl:context;2"
+  ]
+}

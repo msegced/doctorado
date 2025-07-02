@@ -1,0 +1,14 @@
+{
+  "@id": "dtmi:digitaltwins:rec_3_3:agents:person:hotelguest;1",
+  "@type": "Interface",
+  "description": {
+    "en": "A person that acts as a hotel guest."
+  },
+  "displayName": {
+    "en": "Guest"
+  },
+  "extends": "dtmi:digitaltwins:rec_3_3:agents:Person;1",
+  "@context": [
+    "dtmi:dtdl:context;2"
+  ]
+}

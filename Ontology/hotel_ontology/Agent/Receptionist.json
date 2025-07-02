@@ -1,0 +1,128 @@
+{
+  "@id": "dtmi:digitaltwins:rec_3_3:agents:person:receptionist;1",
+  "@type": "Interface",
+  "description": {
+    "en": "A person that works as a receptionist."
+  },
+  "displayName": {
+    "en": "Receptionist"
+  },
+  "contents": [
+    {
+      "@type": "Property",
+      "description": {
+        "en": "Lenght of service in the Organization (in years)"
+      },
+      "displayName": {
+        "en": "lenght of service"
+      },
+      "name": "lengthOfService",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "description": {
+        "en": "Being aware of guests’ reactions and understanding the reasons behind them, including physical and emotional cues."
+      },
+      "displayName": {
+        "en": "social perceptiveness"
+      },
+      "name": "socialPerceptiveness",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "description": {
+        "en": "Effectively conveying information to guests, ensuring clarity and professionalism in communication."
+      },
+      "displayName": {
+        "en": "speaking"
+      },
+      "name": "speaking",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "description": {
+        "en": "Actively seeking ways to assist guests, including adapting services based on real-time feedback from biometric and environmental data."
+      },
+      "displayName": {
+        "en": "service orientation"
+      },
+      "name": "serviceOrientation",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "description": {
+        "en": "Paying full attention to guests’ concerns, understanding their needs, and asking relevant questions to resolve issues effectively."
+      },
+      "displayName": {
+        "en": "coordination"
+      },
+      "name": "coordination",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "description": {
+        "en": "Identifying and solving operational issues, such as long wait times, by analysing historical and real-time data to propose optimal solutions."
+      },
+      "displayName": {
+        "en": "complex problem solving"
+      },
+      "name": "complexProblemSolving",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "description": {
+        "en": "Identifying and solving operational issues, such as long wait times, by analysing historical and real-time data to propose optimal solutions."
+      },
+      "displayName": {
+        "en": "complex problem solving"
+      },
+      "name": "complexProblemSolving",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "description": {
+        "en": "Understanding written communication, particularly in work-related documents, policies, or instructions, to enhance service accuracy."
+      },
+      "displayName": {
+        "en": "reading comprehension"
+      },
+      "name": "readingComprehension",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "description": {
+        "en": "Leveraging biometric data (e.g., heart rate, movement) to assess the receptionist’s physical state and recommend workload adjustments or interventions to sustain performance."
+      },
+      "displayName": {
+        "en": "stress and fatigue monitoring"
+      },
+      "name": "stressFatigueMonitoring",
+      "schema": {
+        "@type": "Map",
+        "description": {
+          "en": "This is a map that will store values obtained from wearables, which together contribute to assessing stress and fatigue. These values include Heart Rate (HR), Heart Rate Variability (HRV), Blood Oxygen Saturation (SpO2), Skin Temperature, Respiration Rate, Electrodermal Activity (EDA), and Blood Pressure. Note that not all of these values may be available, as it depends on the capabilities of the specific wearable device."
+        },
+        "mapKey": {
+          "name": "tagName",
+          "schema": "string"
+        },
+        "mapValue": {
+          "name": "tagValue",
+          "schema": "double"
+        }
+      }
+    }
+  ],
+  "extends": "dtmi:digitaltwins:rec_3_3:agents:Person;1",
+  "@context": [
+    "dtmi:dtdl:context;2"
+  ]
+}

@@ -1,0 +1,4 @@
+Metric,Generic DT,Ontology-Based DT,Improvement (%)
+Avg. Task Assignment Time (s),2.67 ± 0.40,2.09 ± 0.29,21.8%
+Contextual Match Accuracy (%),68.46 ± 5.99,90.20 ± 4.45,31.7%
+Service Rule Coverage (#rules),12 (manual),34 (inferred),183.3%

@@ -1,0 +1,56 @@
+# Guests Needing Check-In Today
+PREFIX hotel: <http://example.org/hotel#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?guest ?reservation ?checkInDate
+WHERE {
+  ?guest a hotel:Guest ;
+         hotel:makesReservation ?reservation .
+  ?reservation hotel:checkInDate ?checkInDate .
+  FILTER (xsd:date(?checkInDate) = "2025-06-15"^^xsd:date)
+}
+
+
+# Rooms Needing Cleaning
+PREFIX hotel: <http://example.org/hotel#>
+
+SELECT ?room
+WHERE {
+  ?room a hotel:Room ;
+        hotel:hasStatus "needsCleaning" .
+}
+
+
+# High Workload Receptionists
+PREFIX hotel: <http://example.org/hotel#>
+
+SELECT ?receptionist
+WHERE {
+  ?receptionist a hotel:Receptionist ;
+                hotel:workloadLevel "high" .
+}
+
+
+# Guests Without Assigned Room
+PREFIX hotel: <http://example.org/hotel#>
+
+SELECT ?guest
+WHERE {
+  ?guest a hotel:Guest ;
+         hotel:makesReservation ?res .
+  FILTER NOT EXISTS {
+    ?res hotel:isAssignedTo ?room .
+  }
+}
+
+# IoT Devices Monitoring Multiple Rooms
+PREFIX hotel: <http://example.org/hotel#>
+
+SELECT ?device (COUNT(?room) AS ?roomCount)
+WHERE {
+  ?device a hotel:IoTDevice ;
+          hotel:monitors ?room .
+}
+GROUP BY ?device
+HAVING (COUNT(?room) > 1)
+

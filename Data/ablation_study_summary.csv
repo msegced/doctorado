@@ -1,0 +1,6 @@
+Variant,Task Efficiency (%) ± mean,Task Efficiency (%) ± std,Avg. Check-In Time (min) ± mean,Avg. Check-In Time (min) ± std,Context Match (%) ± mean,Context Match (%) ± std,Satisfaction Score (/100) ± mean,Satisfaction Score (/100) ± std
+Baseline DT,67.87,3.44,6.31,0.7,62.49,5.94,74.07,7.32
+Full O + R + P,84.94,2.06,4.48,0.39,90.01,2.63,90.25,4.42
+O + P,76.95,3.54,5.8,0.45,78.12,4.92,85.13,3.88
+O + R,77.13,2.1,5.18,0.48,86.0,4.57,85.37,3.22
+O only,71.39,3.25,6.09,0.6,69.32,5.37,79.6,6.58

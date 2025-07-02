@@ -1,0 +1,22 @@
+# Guest Requires Check-In Today
+Guest(?g) ^ makesReservation(?g, ?r) ^ Reservation(?r) ^
+checkInDate(?r, ?d) ^ swrlb:equal(?d, "2025-06-15") 
+→ NeedsCheckInToday(?g)
+
+# Trigger Housekeeping Alert
+Room(?room) ^ hasStatus(?room, "needsCleaning") ^ 
+isAssignedTo(?room, ?r) 
+→ TriggerHousekeepingAlert(?room)
+
+# Redistribute Tasks from Overloaded Receptionist
+Receptionist(?e) ^ workloadLevel(?e, "high") 
+→ RecommendTaskRedistribution(?e)
+
+# Auto-Assign Room If Unassigned
+Reservation(?res) ^ NOT(isAssignedTo(?res, ?r)) 
+→ AssignDefaultRoom(?res)
+
+# Alert for Guest Request Pending Too Long
+GuestRequest(?req) ^ requestTime(?req, ?t) ^ 
+swrlb:greaterThan(?t, "00:30:00") 
+→ EscalateRequest(?req)

@@ -1,0 +1,11 @@
+﻿{
+  "@id": "dtmi:digitaltwins:rec_3_3:building:ReceptionLevel;1",
+  "@type": "Interface",
+  "displayName": {
+    "en": "Reception level"
+  },
+  "extends": "dtmi:digitaltwins:rec_3_3:core:Level;1",
+  "@context": [
+    "dtmi:dtdl:context;2"
+  ]
+}

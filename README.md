@@ -18,7 +18,7 @@ This repository contains the full dataset, simulation code, and semantic artifac
 │   ├── simulate_comparison_dt.py
 │   ├── simulate_ablation_study.py
 ├── Ontology/
-│   ├── hotel_ontology.owl
+│   ├── hotel_ontology
 │   ├── reasoning_rules.swrl
 │   └── queries.sparql
 ├── README.md
@@ -31,6 +31,19 @@ This repository contains the full dataset, simulation code, and semantic artifac
 Make sure Python is installed (v3.8+ recommended). Then install required libraries:
 ```bash
 pip install numpy pandas matplotlib seaborn
+```
+## 📎 Optional: Create a Virtual Environment
+```bash
+python -m venv dt_env
+source dt_env/bin/activate  # On Windows: dt_env\Scripts\activate
+pip install -r requirements.txt
+```
+### 📎 requirements.txt
+```text
+numpy==1.24.3
+pandas==1.5.3
+matplotlib==3.7.1
+seaborn==0.12.2
 ```
 ## 🚀 Running the Simulations
 1. Baseline vs. DT Performance Metrics

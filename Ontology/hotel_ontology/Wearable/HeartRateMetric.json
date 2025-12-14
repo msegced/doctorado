@@ -1,0 +1,28 @@
+{
+  "@id": "dtmi:digitaltwins:rec_3_3:frontdesk:HeartRateMetric;1",
+  "@type": "Interface",
+  "displayName": {
+    "en": "Heart rate metric"
+  },
+  "description": {
+    "en": "Heart rate metric (e.g., mean beats per minute) computed over a time window."
+  },
+  "extends": "dtmi:digitaltwins:rec_3_3:frontdesk:PhysiologicalMetric;1",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "unit",
+      "displayName": {
+        "en": "unit"
+      },
+      "description": {
+        "en": "Unit of the heart rate measurement (typically bpm)."
+      },
+      "schema": "string",
+      "writable": false
+    }
+  ],
+  "@context": [
+    "dtmi:dtdl:context;2"
+  ]
+}

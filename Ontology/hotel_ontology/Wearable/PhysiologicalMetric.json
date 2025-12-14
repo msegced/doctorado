@@ -1,0 +1,75 @@
+{
+  "@id": "dtmi:digitaltwins:rec_3_3:frontdesk:PhysiologicalMetric;1",
+  "@type": "Interface",
+  "displayName": {
+    "en": "Physiological metric"
+  },
+  "description": {
+    "en": "Abstract base for wearable-derived physiological metrics (HR, HRV, activity, etc.) computed over a time interval."
+  },
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "staffToken",
+      "displayName": {
+        "en": "staff token"
+      },
+      "description": {
+        "en": "Pseudonymous internal identifier of the staff member."
+      },
+      "schema": "string",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "deviceId",
+      "displayName": {
+        "en": "device identifier"
+      },
+      "description": {
+        "en": "Identifier of the wearable device providing this measurement."
+      },
+      "schema": "string",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "startTimestamp",
+      "displayName": {
+        "en": "start timestamp"
+      },
+      "description": {
+        "en": "Start of the aggregation window (UTC)."
+      },
+      "schema": "dateTime",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "endTimestamp",
+      "displayName": {
+        "en": "end timestamp"
+      },
+      "description": {
+        "en": "End of the aggregation window (UTC)."
+      },
+      "schema": "dateTime",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "value",
+      "displayName": {
+        "en": "metric value"
+      },
+      "description": {
+        "en": "Numeric value of the metric; units depend on the metric type."
+      },
+      "schema": "double",
+      "writable": false
+    }
+  ],
+  "@context": [
+    "dtmi:dtdl:context;2"
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "@id": "dtmi:digitaltwins:rec_3_3:frontdesk:PositionEvent;1",
+  "@type": "Interface",
+  "displayName": {
+    "en": "Position event"
+  },
+  "description": {
+    "en": "Observation of a person at a given time and normalized 3D position, produced by a reception-area camera using OCC."
+  },
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "timestamp",
+      "displayName": {
+        "en": "timestamp"
+      },
+      "description": {
+        "en": "UTC instant when the position was observed."
+      },
+      "schema": "dateTime",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "cameraId",
+      "displayName": {
+        "en": "camera identifier"
+      },
+      "description": {
+        "en": "Identifier of the camera that produced the observation."
+      },
+      "schema": "string",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "personToken",
+      "displayName": {
+        "en": "person token"
+      },
+      "description": {
+        "en": "Pseudonymous token of the detected person (mapped from detected_id)."
+      },
+      "schema": "string",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "posX",
+      "displayName": {
+        "en": "normalized X"
+      },
+      "description": {
+        "en": "Normalized X coordinate in [0,1]."
+      },
+      "schema": "double",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "posY",
+      "displayName": {
+        "en": "normalized Y"
+      },
+      "description": {
+        "en": "Normalized Y coordinate in [0,1]."
+      },
+      "schema": "double",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "posZ",
+      "displayName": {
+        "en": "normalized Z"
+      },
+      "description": {
+        "en": "Normalized Z coordinate in [0,1]."
+      },
+      "schema": "double",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "eventType",
+      "displayName": {
+        "en": "event type"
+      },
+      "description": {
+        "en": "Semantic label derived from the OCC event field."
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "string",
+        "enumValues": [
+          {
+            "name": "AccessAllowed",
+            "enumValue": "AccessAllowed"
+          },
+          {
+            "name": "AccessDenied",
+            "enumValue": "AccessDenied"
+          },
+          {
+            "name": "Entered",
+            "enumValue": "Entered"
+          },
+          {
+            "name": "Exited",
+            "enumValue": "Exited"
+          },
+          {
+            "name": "Presence",
+            "enumValue": "Presence"
+          },
+          {
+            "name": "Other",
+            "enumValue": "Other"
+          }
+        ]
+      },
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "roiX",
+      "displayName": {
+        "en": "ROI X"
+      },
+      "description": {
+        "en": "ROI top-left X coordinate in image pixels."
+      },
+      "schema": "integer",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "roiY",
+      "displayName": {
+        "en": "ROI Y"
+      },
+      "description": {
+        "en": "ROI top-left Y coordinate in image pixels."
+      },
+      "schema": "integer",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "roiWidth",
+      "displayName": {
+        "en": "ROI width"
+      },
+      "description": {
+        "en": "ROI width in image pixels."
+      },
+      "schema": "integer",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "roiHeight",
+      "displayName": {
+        "en": "ROI height"
+      },
+      "description": {
+        "en": "ROI height in image pixels."
+      },
+      "schema": "integer",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "confidence",
+      "displayName": {
+        "en": "confidence"
+      },
+      "description": {
+        "en": "Confidence score in [0,1] associated with this detection."
+      },
+      "schema": "double",
+      "writable": false
+    },
+    {
+      "@type": "Relationship",
+      "name": "zone",
+      "displayName": {
+        "en": "classified zone"
+      },
+      "description": {
+        "en": "Zone in which this event is classified."
+      },
+      "target": "dtmi:digitaltwins:rec_3_3:frontdesk:ReceptionZone;1"
+    },
+    {
+      "@type": "Relationship",
+      "name": "trajectory",
+      "displayName": {
+        "en": "trajectory"
+      },
+      "description": {
+        "en": "Trajectory this event belongs to, if any."
+      },
+      "target": "dtmi:digitaltwins:rec_3_3:frontdesk:Trajectory;1"
+    }
+  ],
+  "@context": [
+    "dtmi:dtdl:context;2"
+  ]
+}

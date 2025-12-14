@@ -1,0 +1,113 @@
+{
+  "@id": "dtmi:digitaltwins:rec_3_3:frontdesk:WorkloadState;1",
+  "@type": "Interface",
+  "displayName": {
+    "en": "Workload state"
+  },
+  "description": {
+    "en": "Categorical discretisation of the workload index (e.g., Low, Medium, High) linked to staff, trajectories and service activities."
+  },
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "staffToken",
+      "displayName": {
+        "en": "staff token"
+      },
+      "description": {
+        "en": "Pseudonymous identifier of the staff member."
+      },
+      "schema": "string",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "windowStart",
+      "displayName": {
+        "en": "window start"
+      },
+      "description": {
+        "en": "Start of the time window (UTC)."
+      },
+      "schema": "dateTime",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "windowEnd",
+      "displayName": {
+        "en": "window end"
+      },
+      "description": {
+        "en": "End of the time window (UTC)."
+      },
+      "schema": "dateTime",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "level",
+      "displayName": {
+        "en": "workload level"
+      },
+      "description": {
+        "en": "Categorical workload level."
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "string",
+        "enumValues": [
+          {
+            "name": "Low",
+            "enumValue": "Low"
+          },
+          {
+            "name": "Medium",
+            "enumValue": "Medium"
+          },
+          {
+            "name": "High",
+            "enumValue": "High"
+          }
+        ]
+      },
+      "writable": false
+    },
+    {
+      "@type": "Relationship",
+      "name": "derivedFromIndex",
+      "displayName": {
+        "en": "derived from index"
+      },
+      "description": {
+        "en": "Workload index instance from which this state was derived."
+      },
+      "target": "dtmi:digitaltwins:rec_3_3:frontdesk:WorkloadIndex;1"
+    },
+    {
+      "@type": "Relationship",
+      "name": "zoneDwellSegment",
+      "displayName": {
+        "en": "zone dwell segment"
+      },
+      "description": {
+        "en": "Zone dwell segment during which this workload state holds."
+      },
+      "target": "dtmi:digitaltwins:rec_3_3:frontdesk:ZoneDwellSegment;1"
+    },
+    {
+      "@type": "Relationship",
+      "name": "serviceActivity",
+      "displayName": {
+        "en": "service activity"
+      },
+      "description": {
+        "en": "Front-desk service activity performed under this workload state."
+      },
+      "target": "dtmi:digitaltwins:rec_3_3:frontdesk:ServiceActivity;1"
+    }
+  ],
+  "@context": [
+    "dtmi:dtdl:context;2"
+  ]
+}

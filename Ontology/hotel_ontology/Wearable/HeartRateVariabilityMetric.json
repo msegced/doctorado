@@ -1,0 +1,41 @@
+{
+  {
+    "@id": "dtmi:digitaltwins:rec_3_3:frontdesk:HeartRateVariabilityMetric;1",
+    "@type": "Interface",
+    "displayName": {
+      "en": "Heart rate variability metric"
+    },
+    "description": {
+      "en": "Heart rate variability (HRV) metric such as RMSSD or SDNN, computed over a time window."
+    },
+    "extends": "dtmi:digitaltwins:rec_3_3:frontdesk:PhysiologicalMetric;1",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "feature",
+        "displayName": {
+          "en": "HRV feature"
+        },
+        "description": {
+          "en": "HRV feature type (e.g., RMSSD, SDNN)."
+        },
+        "schema": "string",
+        "writable": false
+      },
+      {
+        "@type": "Property",
+        "name": "unit",
+        "displayName": {
+          "en": "unit"
+        },
+        "description": {
+          "en": "Unit of the HRV metric."
+        },
+        "schema": "string",
+        "writable": false
+      }
+    ],
+    "@context": [
+      "dtmi:dtdl:context;2"
+    ]
+  }

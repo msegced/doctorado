@@ -1,0 +1,100 @@
+{
+  "@id": "dtmi:digitaltwins:rec_3_3:frontdesk:WorkloadIndex;1",
+  "@type": "Interface",
+  "displayName": {
+    "en": "Workload index"
+  },
+  "description": {
+    "en": "Continuous workload index in [0,1] computed for a staff member over a time window from physiological metrics."
+  },
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "staffToken",
+      "displayName": {
+        "en": "staff token"
+      },
+      "description": {
+        "en": "Pseudonymous identifier of the staff member."
+      },
+      "schema": "string",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "windowStart",
+      "displayName": {
+        "en": "window start"
+      },
+      "description": {
+        "en": "Start of the time window (UTC)."
+      },
+      "schema": "dateTime",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "windowEnd",
+      "displayName": {
+        "en": "window end"
+      },
+      "description": {
+        "en": "End of the time window (UTC)."
+      },
+      "schema": "dateTime",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "value",
+      "displayName": {
+        "en": "workload index"
+      },
+      "description": {
+        "en": "Workload index value in [0,1]."
+      },
+      "schema": "double",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "method",
+      "displayName": {
+        "en": "method"
+      },
+      "description": {
+        "en": "Computation method used to obtain the workload index."
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "string",
+        "enumValues": [
+          {
+            "name": "RuleBased",
+            "enumValue": "RuleBased"
+          },
+          {
+            "name": "DataDriven",
+            "enumValue": "DataDriven"
+          }
+        ]
+      },
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "featureVectorJson",
+      "displayName": {
+        "en": "feature vector (JSON)"
+      },
+      "description": {
+        "en": "Optional JSON-encoded feature vector used to compute this index."
+      },
+      "schema": "string",
+      "writable": false
+    }
+  ],
+  "@context": [
+    "dtmi:dtdl:context;2"
+  ]
+}

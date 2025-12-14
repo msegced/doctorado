@@ -1,0 +1,89 @@
+{
+  "@id": "dtmi:digitaltwins:rec_3_3:frontdesk:ReceptionZone;1",
+  "@type": "Interface",
+  "displayName": {
+    "en": "Reception zone"
+  },
+  "description": {
+    "en": "Semantic zone in the hotel reception (queue, service, back office, entrance, etc.)."
+  },
+  "extends": "dtmi:digitaltwins:rec_3_3:core:Zone;1",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "zoneKind",
+      "displayName": {
+        "en": "zone kind"
+      },
+      "description": {
+        "en": "Semantic type of the zone (queue, service, back office, entrance, etc.)."
+      },
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "string",
+        "enumValues": [
+          {
+            "name": "Queue",
+            "enumValue": "Queue"
+          },
+          {
+            "name": "Service",
+            "enumValue": "Service"
+          },
+          {
+            "name": "BackOffice",
+            "enumValue": "BackOffice"
+          },
+          {
+            "name": "Entrance",
+            "enumValue": "Entrance"
+          },
+          {
+            "name": "Other",
+            "enumValue": "Other"
+          }
+        ]
+      },
+      "writable": true
+    },
+    {
+      "@type": "Property",
+      "name": "footprint",
+      "displayName": {
+        "en": "footprint polygon"
+      },
+      "description": {
+        "en": "2D polygon footprint in local reception coordinates, e.g., encoded as 'x1,y1;x2,y2;...'."
+      },
+      "schema": "string",
+      "writable": true
+    },
+    {
+      "@type": "Property",
+      "name": "minHeight",
+      "displayName": {
+        "en": "minimum height"
+      },
+      "description": {
+        "en": "Minimum height (e.g., in meters) of the 3D prism representing this zone."
+      },
+      "schema": "double",
+      "writable": true
+    },
+    {
+      "@type": "Property",
+      "name": "maxHeight",
+      "displayName": {
+        "en": "maximum height"
+      },
+      "description": {
+        "en": "Maximum height (e.g., in meters) of the 3D prism representing this zone."
+      },
+      "schema": "double",
+      "writable": true
+    }
+  ],
+  "@context": [
+    "dtmi:dtdl:context;2"
+  ]
+}

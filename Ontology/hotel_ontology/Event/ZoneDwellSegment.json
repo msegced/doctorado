@@ -1,0 +1,142 @@
+{
+  "@id": "dtmi:digitaltwins:rec_3_3:frontdesk:ZoneDwellSegment;1",
+  "@type": "Interface",
+  "displayName": {
+    "en": "Zone dwell segment"
+  },
+  "description": {
+    "en": "Maximal contiguous time segment where a person stays in a given reception zone."
+  },
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "startTimestamp",
+      "displayName": {
+        "en": "start timestamp"
+      },
+      "description": {
+        "en": "Entry timestamp of the segment (first event in the zone)."
+      },
+      "schema": "dateTime",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "endTimestamp",
+      "displayName": {
+        "en": "end timestamp"
+      },
+      "description": {
+        "en": "Exit timestamp of the segment (last event in the zone)."
+      },
+      "schema": "dateTime",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "meanPosX",
+      "displayName": {
+        "en": "mean X"
+      },
+      "description": {
+        "en": "Representative X position in [0,1] for this segment (e.g., mean)."
+      },
+      "schema": "double",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "meanPosY",
+      "displayName": {
+        "en": "mean Y"
+      },
+      "description": {
+        "en": "Representative Y position in [0,1] for this segment (e.g., mean)."
+      },
+      "schema": "double",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "meanPosZ",
+      "displayName": {
+        "en": "mean Z"
+      },
+      "description": {
+        "en": "Representative Z position in [0,1] for this segment (e.g., mean)."
+      },
+      "schema": "double",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "durationSeconds",
+      "displayName": {
+        "en": "duration (s)"
+      },
+      "description": {
+        "en": "Dwell duration in seconds."
+      },
+      "schema": "double",
+      "writable": false
+    },
+    {
+      "@type": "Relationship",
+      "name": "zone",
+      "displayName": {
+        "en": "zone"
+      },
+      "description": {
+        "en": "Zone in which this dwell segment occurs."
+      },
+      "target": "dtmi:digitaltwins:rec_3_3:frontdesk:ReceptionZone;1"
+    },
+    {
+      "@type": "Relationship",
+      "name": "trajectory",
+      "displayName": {
+        "en": "trajectory"
+      },
+      "description": {
+        "en": "Trajectory this dwell segment is part of."
+      },
+      "target": "dtmi:digitaltwins:rec_3_3:frontdesk:Trajectory;1"
+    },
+    {
+      "@type": "Relationship",
+      "name": "entryEvent",
+      "displayName": {
+        "en": "entry event"
+      },
+      "description": {
+        "en": "Position event that starts this segment."
+      },
+      "target": "dtmi:digitaltwins:rec_3_3:frontdesk:PositionEvent;1"
+    },
+    {
+      "@type": "Relationship",
+      "name": "exitEvent",
+      "displayName": {
+        "en": "exit event"
+      },
+      "description": {
+        "en": "Position event that ends this segment."
+      },
+      "target": "dtmi:digitaltwins:rec_3_3:frontdesk:PositionEvent;1"
+    },
+    {
+      "@type": "Relationship",
+      "name": "serviceActivity",
+      "displayName": {
+        "en": "service activity"
+      },
+      "description": {
+        "en": "Front-desk service activity occurring during this segment (e.g., check-in), if modeled."
+      },
+      "target": "dtmi:digitaltwins:rec_3_3:frontdesk:ServiceActivity;1"
+    }
+  ],
+  "@context": [
+    "dtmi:dtdl:context;2"
+  ]
+}

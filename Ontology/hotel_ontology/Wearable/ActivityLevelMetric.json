@@ -1,0 +1,28 @@
+{
+  "@id": "dtmi:digitaltwins:rec_3_3:frontdesk:ActivityLevelMetric;1",
+  "@type": "Interface",
+  "displayName": {
+    "en": "Activity level metric"
+  },
+  "description": {
+    "en": "Activity level proxy (e.g., steps per minute or movement index) computed over a time window."
+  },
+  "extends": "dtmi:digitaltwins:rec_3_3:frontdesk:PhysiologicalMetric;1",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "unit",
+      "displayName": {
+        "en": "unit"
+      },
+      "description": {
+        "en": "Unit of the activity metric (e.g., steps/min)."
+      },
+      "schema": "string",
+      "writable": false
+    }
+  ],
+  "@context": [
+    "dtmi:dtdl:context;2"
+  ]
+}

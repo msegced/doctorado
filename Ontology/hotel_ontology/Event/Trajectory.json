@@ -1,0 +1,85 @@
+{
+  "@id": "dtmi:digitaltwins:rec_3_3:frontdesk:Trajectory;1",
+  "@type": "Interface",
+  "displayName": {
+    "en": "Trajectory"
+  },
+  "description": {
+    "en": "Ordered sequence of position events for a given pseudonymous person token."
+  },
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "personToken",
+      "displayName": {
+        "en": "person token"
+      },
+      "description": {
+        "en": "Pseudonymous person token this trajectory belongs to."
+      },
+      "schema": "string",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "startTimestamp",
+      "displayName": {
+        "en": "start timestamp"
+      },
+      "description": {
+        "en": "Timestamp of the first event in the trajectory."
+      },
+      "schema": "dateTime",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "endTimestamp",
+      "displayName": {
+        "en": "end timestamp"
+      },
+      "description": {
+        "en": "Timestamp of the last event in the trajectory."
+      },
+      "schema": "dateTime",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "name": "eventCount",
+      "displayName": {
+        "en": "event count"
+      },
+      "description": {
+        "en": "Number of position events in this trajectory."
+      },
+      "schema": "integer",
+      "writable": false
+    },
+    {
+      "@type": "Relationship",
+      "name": "hasEvent",
+      "displayName": {
+        "en": "has event"
+      },
+      "description": {
+        "en": "Events that belong to this trajectory."
+      },
+      "target": "dtmi:digitaltwins:rec_3_3:frontdesk:PositionEvent;1"
+    },
+    {
+      "@type": "Relationship",
+      "name": "hasDwellSegment",
+      "displayName": {
+        "en": "has dwell segment"
+      },
+      "description": {
+        "en": "Zone dwell segments derived from this trajectory."
+      },
+      "target": "dtmi:digitaltwins:rec_3_3:frontdesk:ZoneDwellSegment;1"
+    }
+  ],
+  "@context": [
+    "dtmi:dtdl:context;2"
+  ]
+}
